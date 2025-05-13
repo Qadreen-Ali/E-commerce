@@ -1,8 +1,10 @@
 import 'package:e_comm/firebase_options.dart';
 import 'package:e_comm/services/auth-ui/SignUpScreen.dart';
 import 'package:e_comm/services/auth-ui/signInScreen.dart';
+import 'package:e_comm/services/auth-ui/welcomeScreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'services/auth-ui/splashScreen.dart';
 import 'services/user-panel/mainScreen.dart';
@@ -26,7 +28,9 @@ class MyApp extends StatelessWidget {
 
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const SignInScreen(),
+      home: const WelcomeScreen(),
+      builder: EasyLoading.init(),
+
     );
   }
 }

@@ -25,4 +25,34 @@ class  UserModel {
     required this.createdOn,
     required this.street,
   });
+
+  // Serialize the usermodel instance to a jason Map
+  Map<String, dynamic> toMap(){
+    return {
+      'uId': uId,
+      'user': username,
+      'email':email ,
+      'phone': phone,
+      'userImg': userImg ,
+      'userDeviceToken':userDeviceToken ,
+      'country': country,
+      'isAdmin':isAdmin ,
+      'isActive':isActive ,
+      'createdOn': createdOn,
+    };
+  }
+
+  factory UserModel.fromMap(Map<String, dynamic>json){
+    return UserModel(uId:json ["uId"],
+        country: json["country"],
+        username: json["username"],
+        email: json["email"],
+        phone: json["phone"],
+        userDeviceToken:json ["userDeviceToken"],
+        userImg: json["userImg"],
+        isActive: json["isActive"],
+        isAdmin:json ["isAdmin"],
+        createdOn: json["createdOn"],
+        street:json["street"].toString(),);
+  }
 }
